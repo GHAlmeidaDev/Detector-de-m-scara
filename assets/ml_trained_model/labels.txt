@@ -1,0 +1,2 @@
+0 com_máscara
+1 sem_máscara
