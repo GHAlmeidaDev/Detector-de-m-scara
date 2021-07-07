@@ -34,7 +34,7 @@ class _FaceDetectionFromImageState extends State<FaceDetectionFromImage> {
   }
 
   selectFromImagePicker() async {
-    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+    var image = await ImagePicker.pickImage(source: ImageSource.camera);
     if (image == null) return;
     setState(() {
       _loading = true;
@@ -76,13 +76,15 @@ class _FaceDetectionFromImageState extends State<FaceDetectionFromImage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Detector de máscara'),
-        backgroundColor: Colors.red.shade300,
+        backgroundColor: Colors.red.shade900,
+        foregroundColor: Colors.black,
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.image),
         tooltip: "Pick Image from gallery",
         onPressed: selectFromImagePicker,
-        backgroundColor: Colors.red.shade300,
+        splashColor: Colors.black,
+        backgroundColor: Colors.red.shade900,
       ),
       body: _loading
           ? Container(
@@ -116,8 +118,8 @@ class _FaceDetectionFromImageState extends State<FaceDetectionFromImage> {
                       ? Text(
                           "${_recognitions[0]["label"]}",
                           style: TextStyle(
-                            color: Colors.red.shade300,
-                            fontSize: 20.0,
+                            color: Colors.red.shade900,
+                            fontSize: 24.0,
                           ),
                         )
                       : Container()

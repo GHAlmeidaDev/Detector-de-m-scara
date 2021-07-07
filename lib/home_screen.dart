@@ -11,18 +11,14 @@ class HomeScreen extends StatelessWidget {
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Icon(
-            Icons.search,
-            size: 120.0,
-            color: Colors.red.shade300,
-          ),
+          Image.asset('assets/images/mask.png', color: Colors.red.shade900),
           RaisedButton(
             child: Text('Detectar máscara por imagem',
                 style: new TextStyle(
-                    fontSize: 15, fontFamily: 'Roboto', color: Colors.black)),
+                    fontSize: 20, fontFamily: 'Roboto', color: Colors.white)),
             shape: RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(5.0)),
-            color: Colors.red.shade300,
+                borderRadius: new BorderRadius.circular(10.0)),
+            color: Colors.red.shade900,
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
@@ -34,10 +30,13 @@ class HomeScreen extends StatelessWidget {
           RaisedButton(
             child: Text('Detectar máscara em tempo real',
                 style: new TextStyle(
-                    fontSize: 15, fontFamily: 'Roboto', color: Colors.black)),
+                  fontSize: 20,
+                  fontFamily: 'Roboto',
+                  color: Colors.white,
+                )),
             shape: RoundedRectangleBorder(
-                borderRadius: new BorderRadius.circular(5.0)),
-            color: Colors.red.shade300,
+                borderRadius: new BorderRadius.circular(10.0)),
+            color: Colors.red.shade900,
             onPressed: () {
               Navigator.of(context).push(
                 MaterialPageRoute(

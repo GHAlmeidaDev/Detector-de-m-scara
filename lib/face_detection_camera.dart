@@ -1,3 +1,4 @@
+import 'package:detectordemascara/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:tflite/tflite.dart';
@@ -79,6 +80,7 @@ class _FaceDetectionFromLiveCameraState
   @override
   Widget build(BuildContext context) {
     Size screen = MediaQuery.of(context).size;
+
     return Container(
       constraints: const BoxConstraints.expand(),
       child: cameraController == null
@@ -100,6 +102,29 @@ class _FaceDetectionFromLiveCameraState
                     math.min(_imageHeight, _imageWidth),
                     screen.height,
                     screen.width),
+                Container(
+                    margin: EdgeInsets.all(35),
+                    width: 50.00,
+                    child: RaisedButton(
+                      shape: CircleBorder(),
+                      color: Colors.red.shade900,
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => HomeScreen(),
+                          ),
+                        );
+                      },
+                      child: Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.keyboard_arrow_left_sharp,
+                            color: Colors.white,
+                          ),
+                        ],
+                      ),
+                      padding: EdgeInsets.all(10),
+                    )),
               ],
             ),
     );
